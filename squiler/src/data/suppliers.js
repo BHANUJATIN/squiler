@@ -1,4 +1,4 @@
-[
+const suppliers = [
     {
       "supplierID": "supplierID",
       "companyName": "companyName",
@@ -421,3 +421,4 @@
     }
   ]
   
+export default suppliers;

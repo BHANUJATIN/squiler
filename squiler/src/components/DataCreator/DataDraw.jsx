@@ -1,10 +1,11 @@
 import React from "react";
 import TableStructure from "./TableStructure";
+import customers from "../../data/customers";
+import products from "../../data/products";
+import suppliers from "../../data/suppliers";
 
 function DataDraw() {
-  let customers = require("../DataStore/customers.json");
-  let suppliers = require("../DataStore/suppliers.json");
-  let products = require("../DataStore/products.json");
+  
   return (
     <div className="w-full h-screen overflow-auto scrollbar-hide py-4">
       <TableStructure

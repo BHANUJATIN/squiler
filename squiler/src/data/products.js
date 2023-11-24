@@ -1,4 +1,4 @@
-[
+const products =  [
     {
       "0": "productID",
       "1": "productName",
@@ -937,3 +937,4 @@
     }
   ]
   
+export default products;

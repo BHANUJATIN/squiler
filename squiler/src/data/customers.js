@@ -1,4 +1,5 @@
-[
+
+const customers = [
     {
       "0": "CustomerID",
       "1": "CompanyName",
@@ -1197,3 +1198,4 @@
     }
   ]
   
+export default customers;

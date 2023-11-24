@@ -1,4 +1,4 @@
-[
+const select_customer = [
     {
       "0": "contact_name",
       "1": "address",
@@ -134,3 +134,4 @@
     }
   ]
   
+export default select_customer;

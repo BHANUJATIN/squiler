@@ -1,13 +1,18 @@
+import customers from "../data/customers";
+import suppliers from "../data/suppliers";
+import products from "../data/products";
+import select_customer from "../data/select_customer";
+
 export default function GetTableInfo(data) {
     let infoStore = null;
     if (data === 1) {
-      infoStore = require("./DataStore/customers.json");
+      infoStore = customers;
     } else if (data === 2) {
-      infoStore = require("./DataStore/suppliers.json");
+      infoStore = suppliers;
     } else if (data === 3) {
-      infoStore = require("./DataStore/products.json");
+      infoStore = products;
     } else if (data === 4) {
-      infoStore = require("./DataStore/select_customer.json");
+      infoStore = select_customer;
     }
     let tableHeaders = [];
     let tableRows = [];
