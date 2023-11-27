@@ -8,7 +8,7 @@ function Table({ query, headers, rows, csvData }) {
       {query ? (
         <section className="text-gray-600 body-font pl-4">
           <div className="flex w-full justify-between mt-6 lg:mt-0">
-            <div className="font-bold text-center py-4 w-40 bg-gray-500 text-white rounded-tl-md rounded-tr-lg">
+            <div className="font-bold text-center py-4 w-40 bg-gray-700 text-white rounded-tl-md rounded-tr-lg">
               Output
             </div>
             <CSVLink
@@ -16,7 +16,7 @@ function Table({ query, headers, rows, csvData }) {
               filename={new Date().getTime().toString() + ".csv"}
               className="p-2"
             >
-              <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 h-11 px-4 focus:outline-none hover:bg-indigo-600 rounded text-lg justify-center items-center">
+              <button className="flex mx-auto text-white bg-blue-700 border-0 py-1 h-9 px-2 focus:outline-none hover:bg-blue-800 rounded text-lg justify-center items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

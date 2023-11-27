@@ -1,26 +1,16 @@
-import React, { useState } from "react";
-import TablePopup from "./TablePopup";
-import GetTableInfo from "../GetTableInfo";
+import React from "react";
 
-function TableStructure({ tableName, tableHead, tableNo }) {
-  const [trigger, setTrigger] = useState(false);
+
+function TableStructure({ tableName, tableHead}) {
+  
   tableHead = Object.values(tableHead);
 
-  const [tableHeadData, setTableHeadData] = useState([]);
-  const [tableRowData, setTableRowData] = useState([]);
-  const handleTable = () => {
-    const { tableHeaders, tableRows } = GetTableInfo(tableNo);
-    setTableHeadData(tableHeaders);
-    setTableRowData(tableRows);
-    setTrigger(true);
-  };
-
   return (
-    <div className="mx-10">
-      <div className="flex items-center cursor-pointer" onClick={handleTable}>
+    <div className="mx-7">
+      <div className="flex items-center" >
         <svg
-          width="28"
-          height="28"
+          width="24"
+          height="24"
           viewBox="0 0 24 18"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -34,26 +24,19 @@ function TableStructure({ tableName, tableHead, tableNo }) {
             fillOpacity="0.67"
           ></path>
         </svg>
-        <p className="font-bold text-lg ml-3 text-gray-500">{tableName} [-]</p>
+        <p className="font-bold text-lg ml-3 text-white">{tableName} [-]</p>
       </div>
       {tableHead.map((row, index) => (
         <div className="flex items-end relative ml-3" key={index}>
           <div className="w-6 h-8 border-l-2 border-b-2"></div>
-          <p className="absolute top-5 left-9 text-gray-500 text-sm font-semibold">
+          <p className="absolute top-5 left-9 text-gray-200 text-sm font-semibold">
             {row}{" "}
-            <span className="text-indigo-300 hover:text-indigo-400">
+            <span className="text-blue-400 hover:text-blue-500">
               [varchar(40)]
             </span>
           </p>
         </div>
       ))}
-
-      <TablePopup
-        trigger={trigger}
-        setTrigger={setTrigger}
-        headers={tableHeadData}
-        rows={tableRowData}
-      />
     </div>
   );
 }

@@ -22,7 +22,7 @@ function PredefinedQuery({ setDefaults, setValue }) {
   ];
   return (
     <div>
-      <div className="mx-auto flex items-center font-bold justify-center mt-2 py-2 h-11 px-4 rounded text-blue-700 font-mono w-56 text-lg md:text-xl">
+      <div className="mx-auto flex items-center font-bold justify-center mt-2 py-2 h-11 px-4 rounded text-white font-mono w-56 text-lg md:text-xl">
         React SQL Editor
       </div>
       <div className=" p-4 text-blue-700">
@@ -35,7 +35,7 @@ function PredefinedQuery({ setDefaults, setValue }) {
           {qurtyValue.map((item, index) => (
             <p
               key={index}
-              className="cursor-pointer bg-gray-300 hover:bg-gray-400 font-mono hover:text-white p-2 text-center text-sm rounded-sm my-4"
+              className="cursor-pointer bg-gray-700 text-blue-200 hover:bg-gray-900 font-mono hover:text-white p-2 text-center text-sm rounded-sm my-4"
               onClick={() => {
                 setDefaults(`${item.default}`);
                 setValue(`${item.query}`);

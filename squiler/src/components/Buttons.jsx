@@ -1,6 +1,6 @@
 import React from "react";
 import toast from "react-hot-toast";
-import getTableInfo from "./GetTableInfo";
+import useGetTableInfo from "./GetTableInfo";
 
 function Buttons({
   setCSVData,
@@ -12,9 +12,14 @@ function Buttons({
   defaults,
   value,
 }) {
+  const { tableHeaders, tableRows, loading } = useGetTableInfo(defaults);
+  if (loading) {
+    return <div>Loading</div>;
+  }
+  // console.log(tableHeaders);
   const runQuery = () => {
     setQuery(value);
-    const { tableHeaders, tableRows } = getTableInfo(defaults);
+    // const { tableHeaders, tableRows } = useGetTableInfo(defaults);
     setHeaders(tableHeaders);
     setRows(tableRows);
     const temp = [];
@@ -33,7 +38,6 @@ function Buttons({
   };
 
   const reset = () => {
-    
     setQuery("");
     setValue("select * from customers;");
     setDefaults(1);
@@ -46,7 +50,7 @@ function Buttons({
       <div className="p-2">
         <button
           onClick={reset}
-          className="flex mx-auto text-white bg-indigo-500 border-0 py-2 h-11 px-4 focus:outline-none hover:bg-indigo-600 rounded text-lg justify-center items-center"
+          className="flex mx-auto text-white bg-blue-700 border-0 py-2 h-11 px-4 focus:outline-none hover:bg-blue-800 rounded text-lg justify-center items-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +110,7 @@ function Buttons({
       <div className="p-2">
         <button
           onClick={runQuery}
-          className="flex mx-auto text-white bg-indigo-500 border-0 py-2 h-11 px-4 focus:outline-none hover:bg-indigo-600 rounded text-lg justify-center items-center"
+          className="flex mx-auto text-white bg-blue-700 border-0 py-2 h-11 px-4 focus:outline-none hover:bg-blue-800 rounded text-lg justify-center items-center"
         >
           <div className="pr-3">
             <svg

@@ -2,7 +2,7 @@ import React from "react";
 
 function TableUI({ headers, rows }) {
   return (
-    <div className="w-[70vw] h-80 overflow-auto scrollbar-hide">
+    <div className="w-full h-80 max-w-[100vw] overflow-scroll scrollbar-hide">
       <table className="table-auto w-full text-left whitespace-no-wrap">
         <thead>
           <tr>
@@ -22,7 +22,7 @@ function TableUI({ headers, rows }) {
               {row_value.map((cell_value, index) => (
                 <td
                   key={index}
-                  className="border-t-2 border-gray-200 px-4 py-2 text-sm"
+                  className="border-t-2 border-white px-4 py-2 text-sm text-gray-300"
                 >
                   {cell_value}
                 </td>
