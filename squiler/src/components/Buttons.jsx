@@ -127,7 +127,7 @@ function Buttons({
               />
             </svg>
           </div>
-          <div className="font-bold font-mono">Run Query</div>
+          <div className="font-bold font-mono">Run</div>
         </button>
       </div>
     </div>
