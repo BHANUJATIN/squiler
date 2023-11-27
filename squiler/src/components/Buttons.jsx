@@ -1,4 +1,3 @@
-import React from "react";
 import toast from "react-hot-toast";
 import useGetTableInfo from "./GetTableInfo";
 
@@ -19,7 +18,6 @@ function Buttons({
   // console.log(tableHeaders);
   const runQuery = () => {
     setQuery(value);
-    // const { tableHeaders, tableRows } = useGetTableInfo(defaults);
     setHeaders(tableHeaders);
     setRows(tableRows);
     const temp = [];
@@ -51,7 +49,7 @@ function Buttons({
         <button
           onClick={reset}
           className="flex mx-auto text-white bg-blue-700 border-0 py-2 h-11 px-4 focus:outline-none hover:bg-blue-800 rounded text-lg justify-center items-center"
-        >
+        > 
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -105,6 +103,7 @@ function Buttons({
               />
             </g>
           </svg>
+          <div className="font-bold font-mono pl-1">reset</div>
         </button>
       </div>
       <div className="p-2">

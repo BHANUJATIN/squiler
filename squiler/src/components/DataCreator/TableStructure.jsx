@@ -1,6 +1,3 @@
-import React from "react";
-
-
 function TableStructure({ tableName, tableHead}) {
   
   tableHead = Object.values(tableHead);

@@ -1,20 +1,22 @@
-import React from "react";
 
-import Editor from "@monaco-editor/react";
+import AceEditor from "react-ace";
+
+import "ace-builds/src-noconflict/mode-mysql";
+import "ace-builds/src-noconflict/theme-xcode";
 
 const SqlEditor = ({ setValue, value }) => {
 
   return (
     <div className="overlay rounded-md overflow-hidden w-full h-full shadow-4xl">
-      <Editor
-        height="40vh"
-        width="100%"
-        language={"sql"}
-        value={value}
-        theme={'vs-dark'}
-        defaultValue="//comment"
-        onChange={(value) => setValue(value)}
-      />
+      <AceEditor
+    mode="mysql"
+    theme="xcode"
+    width="100vw"
+    height="40vh"
+    onChange={(value) => setValue(value)}
+    value={value}
+    editorProps={{ $blockScrolling: true }}
+  />
     </div>
   );
 };
